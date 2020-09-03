@@ -1,0 +1,66 @@
+.welcome-page {
+    background-color: $bg-color;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .login-form {
+        border-radius: 30px;
+        background: $bg-color;
+        box-shadow: 5px 5px 10px #a6a9b3,
+            -5px -5px 10px #ffffff;
+        max-width:350px;
+        
+        text-align: center;
+        padding:20px;
+        & p {
+            font-family: $font-text;
+            color:$text-color;
+        }
+        &-logo {
+            display: flex;
+            justify-content: center;
+
+            & img {
+                max-width: 200px;
+                max-height: 100px;
+            }
+        }
+
+        &-button {
+            text-align: center;
+            margin-top:20px;
+            padding: 20px;
+
+            & a {
+                margin:0 auto;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 40px;
+                align-items: center;
+         
+                padding: 15px 10px;
+                border-radius: 25px;
+                background: $bg-color;
+                box-shadow: 5px 5px 10px #797b82,
+                    -5px -5px 10px #ffffff;
+                    font-family: $font-heading;
+                  color:$link-color;
+                text-decoration: none;
+                transition: transform .2s;
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+            }
+
+            & img {
+                max-width: 30px;
+                max-height: 30px;
+                margin-right: 20px;
+            }
+        }
+    }
+}

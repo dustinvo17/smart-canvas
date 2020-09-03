@@ -1,0 +1,128 @@
+@mixin nav-button {
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50px;
+    background: $navbar-bg;
+    box-shadow: 5px 5px 10px #131314,
+        -5px -5px 10px #4b4d4e;
+    cursor: pointer;
+    margin-bottom: 30px;
+    @media screen and (max-width: 900px) { 
+        margin-bottom: 0;
+    }
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        & svg {
+            color:$link-color;
+        }
+    }
+    & svg {
+
+        height: 20px;
+
+    }
+
+}
+
+.dashboard-page {
+    background: $bg-color;
+
+    min-height: 100vh;
+    @media screen and (max-width: 900px) { 
+      padding-bottom: 70px;
+    }
+    &-navbar {
+        z-index: 999;
+        @media screen and (min-width: 900px) {
+            height: 100vh;
+            top:0;
+            
+        }
+       
+        background: $navbar-bg;
+        width: 54px;
+        position: fixed;
+    
+        left: 0;
+        padding: 70px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media screen and (max-width: 900px) {
+            flex-direction: row;
+            padding: 20px;
+            justify-content: space-around;
+            
+           width:100vw;
+           bottom:0;
+           
+          
+        }
+        &__img {
+            z-index: 998;
+            position: relative;
+           
+            @include nav-button();
+            &-logout  {
+                display:none;
+                position: absolute;
+                left:100%;
+                z-index: 996;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                top:50%;
+                transform: translateY(-50%);
+                background:$navbar-bg;
+                padding:10px 20px ;
+                & a {
+                    
+                }
+                &:hover {
+                   
+                    & a {
+                        color:$link-color!important;
+                    }
+                }
+                & a {
+                    text-decoration: none;
+                    color:white!important;
+
+                }
+            }
+            &:hover >   &-logout {
+                display:block!important;
+           
+            } 
+              
+            
+            & img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+
+
+            }
+         
+
+        
+        }
+        
+        & a:not(.logout) {
+            @include nav-button();
+        }
+       
+
+    }
+
+    &-view {
+        margin-left:54px;
+        @media screen and (max-width: 900px) { 
+            margin-left:0
+        }
+    }
+}

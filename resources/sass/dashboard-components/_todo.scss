@@ -1,0 +1,119 @@
+.todolist {
+    list-style: none;
+  
+ 
+
+    & .todo-item {
+        display: flex;
+        align-items: center;
+        line-height: 1.5;
+        margin: 15px 0;
+        padding:5px;
+        @include box-shadow();
+        & div, form {
+            flex-grow: 1;
+            margin-right: 10px;
+           & p {
+               max-width:200px;
+               word-break:break-word;
+           }
+        }
+        & textarea,
+        & button,
+        & input {
+           
+            border: none;
+            background: $bg-color;
+            padding:5px 10px;
+        }
+        & textarea {
+            @include input-box-shadow();
+
+         
+         
+        }
+
+        & .vdatetime {
+            margin:15px 0;
+            width:100%;
+            & input {
+                width: 100%;
+                @include input-box-shadow();
+         
+                border:none;
+               
+            }
+        }
+        p {
+   
+            margin-bottom: 10px;
+          
+            font-size:14px!important;
+        }
+        &:hover {
+            & .edit-icons svg {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+        & .edit-icons svg {
+            color:$text-color;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+        }
+        & button {
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:nth-child(1) {
+                color: white;
+        
+                background-color: $link-color;
+                padding: 10px;
+            }
+
+            &:nth-child(2) {
+                margin-left: 10px;
+
+                color: $text-color;
+                &:focus {
+                    outline: none;
+                }
+
+
+            }
+        }
+        & .edit-icons {
+            max-width: 20px;
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            &:hover {
+                & .edit-icons-dropdown {
+                    display:block;
+                }
+            }
+            &-dropdown {
+            width:100px;
+            list-style: none;
+            padding:10px;
+            @include box-shadow();
+            position: absolute;
+            right:0;
+            z-index: 99;
+            display: none;
+            & li {
+                cursor: pointer;
+                &:hover {
+                    & p {
+                        color:$link-color!important;
+                    }
+               
+                }
+            }
+            }
+        }
+    }
+
+}

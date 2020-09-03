@@ -1,0 +1,239 @@
+@mixin box-shadow {
+    background: $bg-color;
+    box-shadow: 3px 3px 6px #a6a9b3,
+        -3px -3px 6px #ffffff;
+}
+
+@mixin input-box-shadow {
+    border-radius: 2px;
+    background: $bg-color;
+    box-shadow: inset 3px 3px 6px #a6a9b3,
+        inset -3px -3px 6px #ffffff;
+    color: $text-color;
+}
+
+.dashboard-home {
+
+    
+    padding: 30px;
+    @media screen and (max-width: 900px) { 
+        padding:30px 15px;
+       }
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        @media screen and (max-width: 900px) { 
+            flex-direction: column;
+        }
+        width:100%;
+        &-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            @media screen and (max-width: 900px) { 
+                order:1;
+               }
+            &-notification {
+                display: flex;
+                @media screen and (max-width: 900px) { 
+                    display: none;
+                   }
+                line-height: 1.5;
+                flex-direction: column;
+
+                & div:nth-child(1) {
+                    padding: 10px;
+                    font-family: $font-text;
+                    color: $text-color;
+                    @include box-shadow();
+                    display: flex;
+                    align-items: center;
+                    max-height: 200px;
+                    margin-right: 50px;
+                    & svg {
+                        color: $link-color;
+                        margin-right: 20px;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+            @include fileContainer();
+            
+        }
+        &-main {
+          
+            &--tapbar {
+                margin:30px 0;
+                
+              
+                display:inline-block;
+                & div {
+                    display: flex;
+               
+                }
+                & button {
+                   opacity: 0.3;
+                    color: white;
+
+                    background-color: $link-color;
+                    padding: 10px;
+                    border:none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    &.tap-active {
+                        opacity: 1!important;
+                    }
+                    &:nth-child(1){
+                        margin-right:20px;
+                    }
+                }
+            }
+            &--events {
+                padding-right:50px;
+                @media screen and (max-width: 900px) { 
+                    padding-right: 0;
+                 
+                   }
+                & h3 {
+                    margin-bottom: 30px;
+                }
+            }
+            &--event {
+                &:not(:last-child){
+                    margin-bottom: 30px;
+                }
+                border:1px solid $border-color;
+                padding:10px;
+                border-radius: 4px;
+                & p {
+                    &:not(:last-child){
+                        margin-bottom: 10px;
+                    }
+                    
+                    & span{
+                        font-weight: 900!important;
+                        text-transform: uppercase;
+                       
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+        
+
+        &-todo {
+            padding: 15px 20px;
+            min-width: 300px;
+            min-height: 300px;
+            @include box-shadow();
+            @media screen and (max-width: 900px) { 
+                min-width:100%;
+               }
+            & h4 {
+                padding-bottom: 10px;
+                border-bottom: 1px solid $text-color;
+                margin-bottom: 20px;
+            }
+
+            & .add-to-do-ui,
+            & .add-to-do-form {
+                margin-bottom: 10px;
+            }
+
+            & .add-to-do-ui {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                @include input-box-shadow();
+                padding: 10px;
+
+                & svg {
+                    margin-right: 10px;
+                    color: $text-color;
+                }
+            }
+
+            & .add-to-do-form {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                &-field {
+                    width: 100%;
+
+                    & textarea,
+                    input {
+                        margin-top: 10px;
+                        padding-left: 15px;
+                    }
+
+                    &:nth-child(2) {
+                        margin: 15px 0;
+                    }
+                }
+
+                & textarea,
+                & button,
+                & input {
+
+                    border: none;
+                    background: $bg-color;
+                    padding: 10px 5px;
+                }
+
+                & textarea {
+                    width: 100%;
+
+                    line-height: 1.5;
+                    min-height: 50px;
+                    @include input-box-shadow();
+
+
+
+
+                }
+
+                & .vdatetime {
+
+                    width: 100%;
+
+                    & input {
+                        width: 100%;
+                        @include input-box-shadow();
+
+                        border: none;
+
+                    }
+                }
+
+                & button {
+                    border-radius: 4px;
+                    cursor: pointer;
+
+                    &:nth-child(1) {
+                        color: white;
+
+                        background-color: $link-color;
+                        padding: 10px;
+                    }
+
+                    &:nth-child(2) {
+                        margin-left: 10px;
+
+                        color: $text-color;
+
+                        &:focus {
+                            outline: none;
+                        }
+
+
+                    }
+                }
+            }
+
+        }
+    }
+
+}

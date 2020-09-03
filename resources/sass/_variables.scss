@@ -1,0 +1,44 @@
+// Body
+
+$navbar-bg : #2F3031;
+// Typography
+$font-heading: 'Roboto', sans-serif;
+$font-text: 'Raleway', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+$text-color:#9B9FA3;
+$link-color:#626FE3;
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+$bg-color:#EDF1FF;
+$border-color:#D9DCE0;
+
+body, html, * {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,button {
+    color:$text-color;
+    font-family: $font-heading!important;
+}
+p,span ,label ,text,input,small,a{
+    color:$text-color;
+    font-family: $font-text;
+}
+textarea, input,button {
+    border:none;
+    &:focus {
+        outline: none;
+    }
+}
